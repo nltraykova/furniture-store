@@ -4,7 +4,8 @@ import { userSchema } from '../schemas/user.schema.js';
 import userService from '../services/user.service.js';
 import { generateAuthToken } from '../utils/tokenUtils.js';
 import { getErrorMessage } from '../utils/errorUtils.js';
-import { error } from 'node:console';
+
+
 
 const userController = Router();
 
@@ -25,6 +26,26 @@ userController.post('/register', async (req, res) => {
         const errorMessage = getErrorMessage(error);
 
         res.status(400).json({ error: errorMessage })
+    };
+});
+
+userController.post('/login', async (req, res) => {
+    const { email, password } = req.body;
+    
+    try {
+        const user = await userService.login(email, password);
+
+        const token = generateAuthToken(user);
+
+        res.json({
+            _id: user.id,
+            email: user.email,
+            accessToken: token
+        });
+    } catch (error) {
+        const errorMessage = getErrorMessage(error);
+
+        res.status(400).json({ error: errorMessage });
     };
 });
 
