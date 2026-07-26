@@ -4,8 +4,7 @@ import { userSchema } from '../schemas/user.schema.js';
 import userService from '../services/user.service.js';
 import { generateAuthToken } from '../utils/tokenUtils.js';
 import { getErrorMessage } from '../utils/errorUtils.js';
-
-
+import { isAuth } from '../middleware/ath.middleware.js';
 
 const userController = Router();
 
@@ -49,7 +48,7 @@ userController.post('/login', async (req, res) => {
     };
 });
 
-userController.get('/logout', (req, res) => {
+userController.get('/logout', isAuth, (req, res) => {
     const token = req.headers['x-authorization'];
 
     if (!token) {

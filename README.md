@@ -34,7 +34,7 @@
 - [x] Add logout
 - [x] Add login to user controller
 - [x] Add auth middleware
-- [] Add isAuth middleware
+- [x] Add isAuth middleware
 
 ## Furniture Endpoints
 
