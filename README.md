@@ -31,9 +31,9 @@
 - [x] Add validation
 - [x] Hash password with zod transform and bcrypt
 - [x] Generate token
-- [] Add logout
-- [] Add login to user controller
-- [] Add auth middleware
+- [x] Add logout
+- [x] Add login to user controller
+- [x] Add auth middleware
 - [] Add isAuth middleware
 
 ## Furniture Endpoints
