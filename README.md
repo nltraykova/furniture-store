@@ -25,12 +25,12 @@
 
 - [x] Create user controller with register endpoint
 - [x] Add json parser `express.json()`
-- [] Setup prisma orm database `https://www.prisma.io/docs/prisma-orm/quickstart/prisma-postgres`
-- [] Change node with tsx
-- [] Add user model
-- [] Add validation
-- [] Hash password with zod transform and bcrypt
-- [] Generate token
+- [x] Setup prisma orm database `https://www.prisma.io/docs/prisma-orm/quickstart/prisma-postgres`
+- [x] Change node with tsx
+- [x] Add user model
+- [x] Add validation
+- [x] Hash password with zod transform and bcrypt
+- [x] Generate token
 - [] Add logout
 - [] Add login to user controller
 - [] Add auth middleware

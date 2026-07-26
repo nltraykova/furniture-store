@@ -4,6 +4,7 @@ import { userSchema } from '../schemas/user.schema.js';
 import userService from '../services/user.service.js';
 import { generateAuthToken } from '../utils/tokenUtils.js';
 import { getErrorMessage } from '../utils/errorUtils.js';
+import { error } from 'node:console';
 
 const userController = Router();
 
@@ -25,6 +26,16 @@ userController.post('/register', async (req, res) => {
 
         res.status(400).json({ error: errorMessage })
     };
+});
+
+userController.get('/logout', (req, res) => {
+    const token = req.headers['x-authorization'];
+
+    if (!token) {
+        res.status(400).json({ error: 'No token provided' })
+    };
+
+    res.json({ message: 'Logout successful' });
 });
 
 export default userController;
