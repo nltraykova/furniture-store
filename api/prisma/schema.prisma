@@ -19,3 +19,18 @@ model User {
 
   @@map("users")
 }
+
+model Furniture {
+  id          String  @id @default(cuid())
+  description String
+  img         String
+  make        String
+  material    String?
+  model       String
+  price       Float
+  year        Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("furnitures")
+}
