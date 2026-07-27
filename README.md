@@ -50,11 +50,11 @@
 
 ## Ownership Functions
 
-- [] Setup one to many relation
-- [] Add owner on furniture create
-- [] Delete furniture
-- [] Edit furniture
-- [] My furnitures
+- [x] Setup one to many relation
+- [x] Add owner on furniture create
+- [x] Delete furniture
+- [x] Edit furniture
+- [x] My furnitures
 
 ## Bonus
 

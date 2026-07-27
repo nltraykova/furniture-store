@@ -24,7 +24,7 @@ userController.post('/register', async (req, res) => {
     } catch (error) {
         const errorMessage = getErrorMessage(error);
 
-        res.status(400).json({ error: errorMessage })
+        res.status(400).json({ message: errorMessage })
     };
 });
 
@@ -44,7 +44,7 @@ userController.post('/login', async (req, res) => {
     } catch (error) {
         const errorMessage = getErrorMessage(error);
 
-        res.status(400).json({ error: errorMessage });
+        res.status(400).json({ message: errorMessage });
     };
 });
 
@@ -52,7 +52,7 @@ userController.get('/logout', isAuth, (req, res) => {
     const token = req.headers['x-authorization'];
 
     if (!token) {
-        res.status(400).json({ error: 'No token provided' })
+        res.status(400).json({ message: 'No token provided' })
     };
 
     res.json({ message: 'Logout successful' });
